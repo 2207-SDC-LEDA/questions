@@ -1,12 +1,16 @@
 import '@testing-library/jest-dom';
-const sum = require('../server/index.js');
-// import sum from '../server/index.js';
+import {cleanup} from '@testing-library/react';
 
+// jest.useFakeTimers();
+const {app,sum} = require('./app.js');
+// afterEach(cleanup);
+// afterAll(async (done) => { await db.connection.end(); done() });
+// import sum from '../server/index.js';
 // afterEach(() => {
 //   cleanup();
 //   // jest.mock('axios');
 // });
-// afterEach(cleanup)
+// afterEach(cleanup);
 
 // test('use jsdom in this test file', () => {
 //   const element = document.createElement('div');
