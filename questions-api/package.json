@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "test": "jest",
-    "server-start": "nodemon ./server/index.js"
+    "server-start": "nodemon ./server/index.js",
+    "newrelic": "node -r newrelic ./server/index.js"
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
@@ -19,6 +20,7 @@
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^29.3.1",
     "mysql2": "^3.0.1",
+    "newrelic": "^9.8.1",
     "webpack": "^5.75.0"
   },
   "directories": {

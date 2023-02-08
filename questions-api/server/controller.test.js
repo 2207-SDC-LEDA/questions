@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
+require('iconv-lite').encodingExists('foo')
 
-const {routetest} = require('./controller');
+const {routetest, getAnswers} = require('./controller');
 
 
 describe('Test Handlers', function () {
@@ -26,5 +27,22 @@ describe('Test Handlers', function () {
 
   //     expect(res.text).toEqual('hello Bob!');
   // });
+
+  test('responds to /qa/questions/:question_id/answers', () => {
+    const req = { params: { question_id: 1}, query:{page: 1, count:100}  }  ;
+    // console.log(req.params.question_id);
+
+
+    const res = { value: '',
+
+        // send: function(input) { this.value = input }
+        send: function(input){this.value = input}
+    };
+
+
+    getAnswers(req, res);
+
+    expect(res.value).toEqual('');
+});
 
 });

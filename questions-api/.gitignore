@@ -7,3 +7,6 @@ coverage
 *bundle.js.gz
 *bundle.js.map.gz
 *.csv
+*.sh
+copy2ec2
+queries

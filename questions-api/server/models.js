@@ -4,6 +4,7 @@ exports.readQ =(id, page, count) =>{
 
   // let query = `select * from Questions where id in
               // (select qid from product_questions where pid=${id}) and reported = 0`;
+
   let rangel = count*(page-1);
   let rangeh = rangel + count;
   let query = `select q.id as question_id, q.body as question_body, q.date as question_date,
@@ -65,9 +66,9 @@ exports.addA = (qid, body,name,email,photos) =>{
       let dbArray=[];
       if (photos.length >0) {
         dbArray = photos.map((url)=>{
-          console.log(url);
-          console.log(`INSERT INTO photos(aid, address)
-          VALUES(${aid},"${url}")`);
+          // console.log(url);
+          // console.log(`INSERT INTO photos(aid, address)
+          // VALUES(${aid},"${url}")`);
           return db.queryAsync(`INSERT INTO photos(aid, address)
           VALUES(${aid},"${url}")`).catch((error)=>console.log(error));});
         }

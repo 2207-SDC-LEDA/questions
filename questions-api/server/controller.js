@@ -5,12 +5,13 @@ const routetest=(req,res)=>{
 }
 
 const getQuestions = (req, res) =>{
-  console.log('parameter', req.query);
+  // console.log('parameter', req.query);
   let pid = req.query.product_id;
   let page = req.query.page || 1;
   let count= req.query.count || 5;
   models.readQ(pid,page,count)
     .then((result)=>{
+
       let sendback = {};
       sendback['product_id'] = pid;
       sendback['results']=result[0];
@@ -191,7 +192,10 @@ const postQuestion = (req, res)=>{
       // res.send("entry added");
       res.send("Created");
     })
-    .catch((err)=>{console.log(err);throw err});
+    .catch((err)=>{
+      // console.log(err);
+      throw err;
+    });
 
 };
 
@@ -217,7 +221,7 @@ const helpfulQ = (req, res) =>{
 
   models.helpfulQ(qid)
     .then((result)=>{
-      //  console.log('result', result);
+      //  console.log('helpful updated', qid);
       res.send("helpful updated");
     })
     .catch((err)=>{throw err});
