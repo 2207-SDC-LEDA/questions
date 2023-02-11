@@ -12,7 +12,7 @@ exports.readQ =(id, page, count) =>{
                q.reported as reported, a.id as id, a.body as body, a.date as date,
                a.answerername as answerer_name, a.helpfulness as helpfulness,
                p.address as address
-               from Questions as q
+               from questions as q
                left outer join answers as a on q.id = a.qid
                left outer join photos as p on a.id = p.aid
                where q.id in
@@ -25,7 +25,7 @@ exports.readA =(id, page, count) =>{
   let rangel = count*(page-1);
   let rangeh = rangel + count;
   let query = `select a.id as answer_id, a.body, a.date, a.answerername as answerer_name,
-              a.helpfulness, p.id, p.address from Answers as a
+              a.helpfulness, p.id, p.address from answers as a
               left outer join photos as p on a.id = p.aid
               where a.id in
               (select id from answers where qid=${id})

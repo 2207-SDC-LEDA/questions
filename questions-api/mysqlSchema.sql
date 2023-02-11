@@ -15,9 +15,9 @@ USE test;
 --
 -- ---
 
-DROP TABLE IF EXISTS `Questions`;
+DROP TABLE IF EXISTS `questions`;
 
-CREATE TABLE `Questions` (
+CREATE TABLE `questions` (
   `id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `body` VARCHAR(1000) NOT NULL,
   `date` VARCHAR(13) NOT NULL,
@@ -44,9 +44,9 @@ CREATE TABLE `Questionstest` (
 --
 -- ---
 
-DROP TABLE IF EXISTS `Answers`;
+DROP TABLE IF EXISTS `answers`;
 
-CREATE TABLE `Answers` (
+CREATE TABLE `answers` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `body` VARCHAR(1000) NOT NULL,
   `date` VARCHAR(13) NOT NULL,
@@ -108,11 +108,11 @@ CREATE TABLE `photostest` (
 -- Foreign Keys
 -- ---
 
-ALTER TABLE `product_questions` ADD FOREIGN KEY (qid) REFERENCES `Questions` (`id`);
-ALTER TABLE `Answers` ADD FOREIGN KEY (qid) REFERENCES `Questions` (`id`);
+ALTER TABLE `product_questions` ADD FOREIGN KEY (qid) REFERENCES `questions` (`id`);
+ALTER TABLE `answers` ADD FOREIGN KEY (qid) REFERENCES `questions` (`id`);
 -- ALTER TABLE `QA` ADD FOREIGN KEY (qid) REFERENCES `Questions` (`id`);
 -- ALTER TABLE `QA` ADD FOREIGN KEY (aid) REFERENCES `Answers` (`id`);
-ALTER TABLE `photos` ADD FOREIGN KEY (aid) REFERENCES `Answers` (`id`);
+ALTER TABLE `photos` ADD FOREIGN KEY (aid) REFERENCES `answers` (`id`);
 
 -- ---
 -- Table Properties

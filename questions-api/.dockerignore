@@ -6,9 +6,10 @@ node_modules
 coverage
 *bundle.js.gz
 *bundle.js.map.gz
-*.csv
+**/*.csv
 *.sh
 copy2ec2
 queries
-*.sql
-*.xml
+**/*.sql
+**/*.xml
+**/*.test.js
