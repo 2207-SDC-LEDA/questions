@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const {routetest, getQuestions, getAnswers, postQuestion, postAnswer, helpfulQ, helpfulA, reportA} = require('./controller');
 
+router.get('/loaderio-ad5d1d407e7504a7b0732c822f4a0af1.txt', (req, res) => {
+  res.status(200).download('./loaderio-ad5d1d407e7504a7b0732c822f4a0af1.txt')
+});
 router.get('/', routetest);
 router.get('/qa/questions', getQuestions);
 router.get('/qa/questions/:question_id/answers', getAnswers);

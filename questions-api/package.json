@@ -22,6 +22,7 @@
     "mysql2": "^3.0.1",
     "newrelic": "^9.8.1",
     "nodemon": "^2.0.20",
+    "redis": "^4.6.4",
     "webpack": "^5.75.0"
   },
   "directories": {

@@ -50,7 +50,7 @@ exports.addQ = (body, name, email, pid) =>{
            VALUES(${pid}, ${qid})`;
       return db.queryAsync(query2);
     })
-    .catch((error)=>console.log(err));
+    .catch((error)=>console.log(error));
   // return db.queryAsync(query).catch((error)=>console.log(err));
 };
 

@@ -8,7 +8,7 @@ export let options = {
       duration: '30s', // total duration
       preAllocatedVUs: 1000, // to allocate runtime resources     preAll
       maxVUs: 1000,
-      rate: 4500, // number of constant iterations given `timeUnit`
+      rate: 1000, // number of constant iterations given `timeUnit`
       timeUnit: '1s',
     },
   },
@@ -35,12 +35,13 @@ export default function () {
     "photos":["https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80", "https://images.unsplash.com/photo-1511127088257-53ccfcc769fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"]
 });
 
+   const response = http.get(`http://18.116.200.106/qa/questions?product_id=${product_id}`, {headers: {Accepts: "application/json"}});
   // const response = http.get(`http://localhost:2600/qa/questions?product_id=${product_id}`, {headers: {Accepts: "application/json"}});
   // const response = http.get(`http://localhost:2600/qa/questions/${answer_id}/answers`, {headers: {Accepts: "application/json"}});
   // const response = http.post(`http://localhost:2600/qa/questions`, payload, {headers: { 'Content-Type': 'application/json' }});
   // const response = http.post(`http://localhost:2600/qa/questions/${question_id}/answers`, payloadA, {headers: { 'Content-Type': 'application/json' }});
   // const response = http.put(`http://localhost:2600/qa/questions/${question_id}/helpful`, {headers: {Accepts: "application/json"}});
-  const response = http.put(`http://localhost:2600/qa/answers/${answer_id}/helpful`, {headers: {Accepts: "application/json"}});
+  // const response = http.put(`http://localhost:2600/qa/answers/${answer_id}/helpful`, {headers: {Accepts: "application/json"}});
 
 
   check(response, { "status is 200": (r) => r.status === 200 });
