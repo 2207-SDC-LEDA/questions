@@ -1,0 +1,11 @@
+qa/questions/%{*:6100000-6879300}/answers
+
+parameter: product_id    %{*:900009-999999}
+
+headers: Content-Type application/json
+parameters and Request body: {
+    "body":"does it work",
+    "name":"testuser1",
+    "email":"test@test.com",
+    "product_id":%{*:900009-999999}
+}

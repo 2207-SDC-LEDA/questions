@@ -151,7 +151,7 @@ const getQuestions = (req, res) =>{
            redisClient.set(pidkey,   // Key
              JSON.stringify(questionArray),        // Value
              "EX",                         // Set explicit expiry
-             60                            // TTL in seconds
+             60*60                            // TTL in seconds
              );
            res.send(sendback);
            })
@@ -228,7 +228,7 @@ const getAnswers =(req, res) =>{
         redisClient.set(qidkey,   // Key
         JSON.stringify(answers),        // Value
         "EX",                         // Set explicit expiry
-        60                            // TTL in seconds
+        60*60                            // TTL in seconds
         );
         res.send(resa);
       })

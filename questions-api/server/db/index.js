@@ -6,12 +6,10 @@ require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 const connection = mysql.createConnection({
   host:'18.191.57.215',
   port:'3306',
-  // user: 'api',
-  // password:'Hr@202301',
+
   user: process.env.DB_USER,
   password: process.env.DB_PWD,
-  // host: '127.0.0.1',
-  // user:'root',
+
   database: 'test'
 
 
