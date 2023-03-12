@@ -1,0 +1,12 @@
+FROM node:16
+WORKDIR /questions-api
+
+#COPY package*.json ./
+COPY package*.json ./
+RUN npm install
+
+# Bundle app source
+COPY . .
+EXPOSE 2600
+CMD ["npm", "run", "server-start"]
+#CMD ["node", "./server/index.js"]
