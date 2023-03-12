@@ -41,6 +41,7 @@ exports.addQ = (body, name, email, pid) =>{
   let date = Math.floor(Date.now()/ 1000);
   let query = ` INSERT INTO questions(body, date, askername, askeremail)
     VALUES("${body}", "${date}","${name}","${email}")`;
+    
   return db.queryAsync(query)
     .then((result)=>{
       // return result[0].insertId;
